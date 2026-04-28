@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>ZODIAC SCAMMER ⚠️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- Ambient Audio Controls -->
+  <button id="btn-audio" class="audio-toggle">⭐ Mute</button>
+
+  <!-- Background Layer -->
+  <div id="cosmic-bg">
+    <canvas id="constellation-canvas"></canvas>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main-container">
+    <header class="cosmic-header">
+      <div class="zodiac-wheel-container">
+        <!-- SVG Zodiac Wheel -->
+        <svg class="zodiac-wheel" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="90" fill="none" stroke="#ffd700" stroke-width="2" stroke-dasharray="4 4" opacity="0.5"/>
+          <circle cx="100" cy="100" r="70" fill="none" stroke="#ffd700" stroke-width="1" opacity="0.3"/>
+          <g transform="translate(100,100)">
+            <!-- 12 Divisions -->
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" />
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" transform="rotate(30)" />
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" transform="rotate(60)" />
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" transform="rotate(90)" />
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" transform="rotate(120)" />
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" transform="rotate(150)" />
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" transform="rotate(180)" />
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" transform="rotate(210)" />
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" transform="rotate(240)" />
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" transform="rotate(270)" />
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" transform="rotate(300)" />
+            <line x1="0" y1="-90" x2="0" y2="-70" stroke="#ffd700" stroke-width="2" transform="rotate(330)" />
+          </g>
+        </svg>
+      </div>
+      <h1 class="title">ZODIAC SCAMMER ⚠️</h1>
+      <p class="subtitle">The stars are plotting against you. Here's how.</p>
+      <div class="stats-badge">Scams revealed today: <span id="scam-count">0</span></div>
+    </header>
+
+    <section class="selection-section">
+      <div class="zodiac-grid" id="zodiac-grid">
+        <!-- Generated via JS -->
+      </div>
+      
+      <div class="action-row">
+        <button id="btn-reveal" class="btn-primary" disabled>REVEAL MY SCAM ⚠️</button>
+      </div>
+    </section>
+
+    <section class="premium-protection">
+      <button id="btn-premium" class="btn-secondary">Buy Premium Cosmic Protection Plan™</button>
+      <div id="premium-message" class="hidden"></div>
+    </section>
+
+    <!-- History Scroll -->
+    <section class="history-scroll">
+      <h3>PAST WARNINGS 📜</h3>
+      <div id="history-container" class="history-container">
+        <!-- Generated via JS -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Loading Overlay -->
+  <div id="loading-overlay" class="overlay hidden">
+    <div id="loading-stars"></div>
+    <div class="loading-text">INTERCEPTING COSMIC TRANSMISSION...</div>
+  </div>
+
+  <!-- Emergency Alert Modal -->
+  <div id="alert-modal" class="overlay hidden">
+    <div id="alert-card" class="alert-content">
+      <div class="alert-header">
+        <span class="siren">🚨</span>
+        <h2>COSMIC EMERGENCY ALERT</h2>
+        <span class="siren">🚨</span>
+      </div>
+      
+      <div class="alert-body">
+        <h1 id="alert-title">COSMIC SCAM ALERT: TITLE</h1>
+        <div class="alert-info">
+          <p id="alert-desc" class="mono-text">Description goes here.</p>
+          <p><strong>VULNERABILITY DETECTED:</strong> <span id="alert-vuln" class="mono-text"></span></p>
+          <p><strong>DANGER PEAK:</strong> <span id="alert-day" class="mono-text"></span></p>
+        </div>
+        
+        <div class="alias-box">
+          <p class="small-caps">SCAMMER ALIAS:</p>
+          <p id="alert-alias" class="mono-text bold"></p>
+        </div>
+        
+        <div class="safety-box">
+          <p class="small-caps">MANDATORY SAFETY PROTOCOL:</p>
+          <p id="alert-safety" class="mono-text"></p>
+        </div>
+
+        <div class="countdown-container">
+          <p class="small-caps">SCAM ACTIVATES IN:</p>
+          <div id="alert-countdown" class="countdown-text">00:00:00</div>
+        </div>
+        
+        <p class="tiny-print">Report to: <span id="alert-report"></span></p>
+      </div>
+      
+      <div class="alert-footer no-capture">
+        <button id="btn-share" class="btn-alert">😱 Share This Warning</button>
+        <button id="btn-dismiss" class="btn-alert-outline">Dismiss (at your own risk)</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
