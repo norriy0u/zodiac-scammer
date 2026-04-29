@@ -233,9 +233,8 @@ function renderGrid() {
     card.addEventListener('click', (e) => {
       const id = e.currentTarget.dataset.id;
       
-      // Easter egg double click
       if (lastClickedSignId === id && selectedSign && selectedSign.id === id) {
-        alert("You already know. The scam is already in progress. 👁️");
+        alert("You already know. The roast is already in progress. 👁️");
         return;
       }
       
@@ -257,7 +256,7 @@ function updateHistoryUI() {
   document.getElementById('scam-count').textContent = scamHistory.length;
   const histContainer = document.getElementById('history-container');
   if (scamHistory.length === 0) {
-    histContainer.innerHTML = '<p style="text-align:center;color:#888;">No cosmic scams uncovered yet.</p>';
+    histContainer.innerHTML = '<p style="text-align:center;color:#888;">No cosmic roasts delivered yet.</p>';
     return;
   }
   
@@ -314,13 +313,13 @@ async function generateScam(signObj) {
   const hours = Math.floor(Math.random() * (168 - 12 + 1)) + 12;
 
   return {
-    alertTitle: `COSMIC SCAM ALERT: ${signObj.name.toUpperCase()}`,
-    scamDescription: `The universe is organizing a highly targeted operation against you. Beware of a suspiciously charismatic stranger offering you exactly what you want.`,
+    alertTitle: `COSMIC ROAST: ${signObj.name.toUpperCase()}`,
+    scamDescription: `The universe is judging you harshly. Prepare to be publicly embarrassed by your own life choices.`,
     vulnerability: `your ${t.trait} makes you susceptible to ${t.thing}.`,
     worstDay: `${day} afternoon`,
     safetyTip: `Do not make eye contact with pigeons. Walk backwards through doorways.`,
     reportTo: `Bureau of Existential Dread`,
-    scammerAlias: `The Cosmos Operating As: Not A Scam LLC`,
+    scammerAlias: `The Cosmos Operating As: Roastmaster General`,
     countdownHours: hours
   };
 }
@@ -431,11 +430,11 @@ document.getElementById('btn-share').addEventListener('click', async () => {
     
     // Restore footer
     footer.style.display = 'flex';
-    btn.textContent = "😱 Share This Warning";
+    btn.textContent = "😱 Share This Roast";
     
     // Create download link
     const link = document.createElement('a');
-    link.download = `zodiac-scam-${selectedSign.name.toLowerCase()}.png`;
+    link.download = `zodiac-roast-${selectedSign.name.toLowerCase()}.png`;
     link.href = canvas.toDataURL('image/png');
     link.click();
     
@@ -443,7 +442,7 @@ document.getElementById('btn-share').addEventListener('click', async () => {
     console.error("Export failed", e);
     footer.style.display = 'flex';
     btn.textContent = "Failed ❌";
-    setTimeout(() => btn.textContent = "😱 Share This Warning", 2000);
+    setTimeout(() => btn.textContent = "😱 Share This Roast", 2000);
   }
 });
 
